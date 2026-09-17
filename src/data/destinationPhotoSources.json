@@ -1,0 +1,58 @@
+[
+  {
+    "city": "prague",
+    "path": "/assets/destinations2027/prague.jpg",
+    "width": 1280,
+    "height": 946,
+    "alt": "Charles Bridge over the Vltava, with Prague Castle and St. Vitus Cathedral above the red roofs of Malá Strana.",
+    "caption": "Charles Bridge and Prague Castle",
+    "credit": "Estec sarl., Les hôtels pas chers a Prague",
+    "authorUrl": "http://www.prague-hotel-operator.fr",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Prague_castle_panorama.jpg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "objectPosition": "50% 50%"
+  },
+  {
+    "city": "dresden",
+    "path": "/assets/destinations2027/dresden.jpg",
+    "width": 1280,
+    "height": 584,
+    "alt": "Dresden’s historic skyline and Frauenkirche above the Elbe, with riverboats along the embankment.",
+    "caption": "Dresden’s historic skyline along the Elbe",
+    "credit": "© Ad Meskens",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Ad_Meskens",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dresden_Skyline_01.JPG",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "objectPosition": "20% 50%"
+  },
+  {
+    "city": "berlin",
+    "path": "/assets/destinations2027/berlin.jpg",
+    "width": 1280,
+    "height": 851,
+    "alt": "The sandstone columns and quadriga of Berlin’s Brandenburg Gate viewed from below against a blue sky.",
+    "caption": "Brandenburg Gate, Berlin",
+    "credit": "Wolfgang Staudt",
+    "authorUrl": "https://www.flickr.com/people/53074617@N00",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brandenburg_Gate.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "objectPosition": "50% 35%"
+  },
+  {
+    "city": "hamburg",
+    "path": "/assets/destinations2027/hamburg.jpg",
+    "width": 1280,
+    "height": 853,
+    "alt": "Hamburg’s illuminated Wasserschloss between two canals, framed by the red-brick warehouses of Speicherstadt.",
+    "caption": "Speicherstadt’s canals and Wasserschloss at dusk",
+    "credit": "Matthias Süßen",
+    "authorUrl": "https://matthias-suessen.de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wasserschloss-Hamburg-msu-2023-0I9A0689-.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "objectPosition": "50% 50%"
+  }
+]

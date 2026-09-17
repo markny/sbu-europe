@@ -1,104 +1,55 @@
-const cityPhotoBase = '/assets/photos'
+import catalog from './photoCatalog.json'
 
-function loadCityPhotos(slug) {
-  const modules = import.meta.glob('/assets/photos/*/*.{webp,jpg,jpeg,png}', {
-    eager: true,
-    query: '?url',
-    import: 'default'
-  })
-
-  const photos = Object.entries(modules)
-    .filter(([path]) => path.includes(`/assets/photos/${slug}/`))
-    .map(([path, src]) => {
-      const filename = path.split('/').pop()
-      const niceName = filename
-        .replace(/\.[^.]+$/, '')
-        .replace(/^[a-z-]+-\d{4}-/, '')
-        .replace(/-\d+$/, '')
-        .replace(/-/g, ' ')
-        .replace(/\b\w/g, (m) => m.toUpperCase())
-
-      return {
-        filename,
-        src,
-        title: niceName === 'Hero' ? 'Hero image' : niceName,
-        caption: niceName === 'Hero' ? '' : niceName
-      }
-    })
-    .sort((a, b) => a.filename.localeCompare(b.filename))
-
-  const hero =
-    photos.find((photo) => photo.filename.toLowerCase().includes('hero')) || photos[0] || null
-
-  return { hero, photos }
-}
-
+const sources = import.meta.glob('/assets/photos/*/*.webp', {
+  eager: true, query: '?url', import: 'default'
+})
+export const photos = catalog.map((photo) => {
+  if (!sources[photo.path]) throw new Error(`Missing photograph: ${photo.path}`)
+  return { ...photo, src: sources[photo.path] }
+})
+export const photoById = Object.fromEntries(photos.map((photo) => [photo.id, photo]))
 const citySeed = [
   {
-    slug: 'vienna',
-    displayName: 'Vienna',
-    year: 2025,
-    teaser: 'Imperial scale, café culture, public squares, and museum-rich days on foot.',
-    description:
-      'Vienna makes a strong student city because it rewards attention. You notice architecture, public space, transit, museums, and the rhythm of walking from one memorable setting to the next.',
-    futureTripStatus: 'possible-future-city',
-    soundtrack: {
-      enabled: false,
-      label: 'Play Vienna soundtrack',
-      file: ''
-    }
+    slug: 'vienna', displayName: 'Vienna', country: 'Austria', number: '01',
+    subtitle: 'Grand spaces. Small discoveries.',
+    teaser: 'Parliament, palace gardens, museum galleries, and time at the café table.',
+    description: 'The Vienna photographs move from the grand rooms of Parliament and the museum galleries to palace gardens and everyday city life. Just as much of the trip happened between the landmarks: walking together, finding a café, and stopping for a photograph.',
+    heroId: 'olivia-V04', cardId: 'olivia-V05',
+    moments: ['Inside Parliament', 'Museums & gardens', 'Café tables & city walks'],
+    note: 'Vienna was part of the 2025 trip and is the planned starting city for 2027.'
   },
   {
-    slug: 'munich',
-    displayName: 'Munich',
-    year: 2025,
-    teaser: 'Historic streets, beer gardens, alpine edges, and long late-spring evenings.',
-    description:
-      'Munich combines civic grandeur with daily livability. It feels ordered and walkable, but it also opens outward into parks, mountain day-trip energy, and surrounding Bavarian landscapes.',
-    futureTripStatus: 'possible-future-city',
-    soundtrack: {
-      enabled: false,
-      label: 'Play Munich soundtrack',
-      file: ''
-    }
+    slug: 'munich', displayName: 'Munich', country: 'Germany', number: '02',
+    subtitle: 'The city, and a day by the lake.',
+    teaser: 'Historic interiors, modern design, and an excursion to Lake Tegernsee.',
+    description: 'Munich brought together ornate theatre interiors, open city squares, and contemporary automotive displays. The photographs also follow the group out to Tegernsee, where lakeside walks and a swim offered a different pace.',
+    heroId: 'olivia-M17', cardId: 'olivia-M17',
+    moments: ['The Residenz & theatre', 'Design & city life', 'Tegernsee excursion'],
+    note: 'The Tegernsee photographs are labeled separately from Munich city scenes.'
   },
   {
-    slug: 'cologne',
-    displayName: 'Cologne',
-    year: 2025,
-    teaser: 'Cathedral drama, riverfront movement, and a different urban texture along the Rhine.',
-    description:
-      'Cologne shows another side of the trip: river city energy, monumental architecture, and the feeling of moving through a lived-in place with strong regional character.',
-    futureTripStatus: 'past-trip-example',
-    soundtrack: {
-      enabled: false,
-      label: 'Play Cologne soundtrack',
-      file: ''
-    }
+    slug: 'cologne', displayName: 'Cologne', country: 'Germany', number: '03',
+    subtitle: 'Along the Rhine, and beyond.',
+    teaser: 'Cathedral windows, river views, and excursions into the surrounding region.',
+    description: 'In Cologne, the photographs look up at the cathedral, along the river, and into the details of the city. The collection also includes time in Düsseldorf and the Ahr valley: half-timbered streets, vineyard paths, and views over the hills.',
+    heroId: 'olivia-C05', cardId: 'olivia-C05',
+    moments: ['Cologne Cathedral', 'Life along the river', 'Regional excursions'],
+    note: 'Düsseldorf and Ahr valley photographs are labeled as excursions, rather than Cologne city scenes.'
   },
   {
-    slug: 'amsterdam',
-    displayName: 'Amsterdam',
-    year: 2025,
-    teaser: 'Canals, bikes, layered street life, and unusually strong public-space design.',
-    description:
-      'Amsterdam is compelling because of how much the city teaches just by moving through it. It is dense, social, and visually distinct in a way students feel almost immediately.',
-    futureTripStatus: 'past-trip-example',
-    soundtrack: {
-      enabled: false,
-      label: 'Play Amsterdam soundtrack',
-      file: ''
-    }
+    slug: 'amsterdam', displayName: 'Amsterdam', country: 'The Netherlands', number: '04',
+    subtitle: 'A city best seen at street level.',
+    teaser: 'Canals, shared tables, a university visit, and moments together by the water.',
+    description: 'Canals and narrow façades set the scene for the Amsterdam part of the trip. Alongside the city views are photographs from a university visit, the Olympic Stadium, and a brewery visit, as well as the meals and unhurried moments in between.',
+    heroId: 'olivia-A02', cardId: 'olivia-A02',
+    moments: ['Canals & neighborhoods', 'Visits around the city', 'Time together'],
+    note: 'These photographs record the Amsterdam visit in 2025.'
   }
 ]
-
-export const cities = citySeed.map((city) => {
-  const { hero, photos } = loadCityPhotos(city.slug)
-  return {
-    ...city,
-    heroImage: hero?.src || `${cityPhotoBase}/${city.slug}/`,
-    gallery: photos
-  }
-})
-
+export const cities = citySeed.map((city) => ({
+  ...city, year: 2025, hero: photoById[city.heroId], cardPhoto: photoById[city.cardId],
+  gallery: photos.filter((photo) => photo.city === city.slug).sort((a, b) =>
+    (a.featuredOrder ?? Infinity) - (b.featuredOrder ?? Infinity)
+  )
+}))
 export const cityMap = Object.fromEntries(cities.map((city) => [city.slug, city]))

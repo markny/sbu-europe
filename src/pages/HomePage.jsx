@@ -1,83 +1,20 @@
-import HeroSection from '../components/HeroSection'
+import { Link } from 'react-router-dom'
 import CityCard from '../components/CityCard'
-import { cities } from '../data/cities'
+import PhotoFigure from '../components/PhotoFigure'
+import TripRoute from '../components/TripRoute'
+import { cities, photoById } from '../data/cities'
 
 export default function HomePage() {
-  const homeHero = cities.find((city) => city.slug === 'vienna')?.heroImage || cities[0]?.heroImage
-
   return (
-    <>
-      <HeroSection
-        image={homeHero}
-        eyebrow="Late May · Early June · Student experience"
-        title="Europe with SBU"
-        text="An early look at a late-spring student trip built around cities, walking, architecture, cafés, public spaces, museums, transit, and the memorable texture of being there in person."
-        actions={[
-          { label: 'Explore the 2025 cities', href: '#cities' },
-          { label: 'See the 2027 preview', href: '/looking-ahead', ghost: true }
-        ]}
-      />
-
-      <main>
-        <section className="section reveal-up">
-          <div className="shell split">
-            <div>
-              <p className="eyebrow">What this is</p>
-              <h2>A travel-recruitment site, not a finalized itinerary.</h2>
-              <p>
-                The 2027 trip is still taking shape. What this site shows is the atmosphere of the
-                most recent Europe experience: the kinds of cities, rhythms, streets, interiors,
-                views, and everyday moments students can expect from a well-designed late spring trip.
-              </p>
-            </div>
-            <div className="cta">
-              <p className="eyebrow">Interested in learning more?</p>
-              <h3>Early interest is welcome.</h3>
-              <p>
-                This beta site is here to build momentum. If this kind of trip looks appealing,
-                treat it as an invitation to start paying attention and ask questions as plans come together.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section id="cities" className="section">
-          <div className="shell">
-            <p className="eyebrow">Recent trip cities</p>
-            <h2>A look back at 2025.</h2>
-            <p>
-              These pages show the feel of the most recent trip: Vienna, Munich and surrounding areas,
-              Cologne and surrounding areas, and Amsterdam.
-            </p>
-            <div className="card-grid">
-              {cities.map((city) => (
-                <CityCard key={city.slug} city={city} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section reveal-up">
-          <div className="shell split">
-            <div className="panel">
-              <p className="eyebrow">Looking ahead</p>
-              <h2>2027 is still in development.</h2>
-              <p>
-                The next trip is not finalized yet. Likely possibilities may include <strong>Vienna</strong>,{' '}
-                <strong>Munich</strong>, and <strong>Paris</strong>, but the final route is still to be determined.
-              </p>
-            </div>
-            <div className="panel">
-              <p className="eyebrow">Design principle</p>
-              <h2>Sell the experience honestly.</h2>
-              <p>
-                This site is about texture, pace, and memory more than a rigid checklist. It should feel like
-                a real invitation to a rich student trip, not a generic study-abroad brochure.
-              </p>
-            </div>
-          </div>
-        </section>
-      </main>
-    </>
+    <main id="main" tabIndex="-1">
+      <section className="shell home-hero">
+        <div className="home-hero-copy"><p className="eyebrow">Faculty-led travel · Every other year</p><h1>Europe,<br /><em>together.</em></h1><p className="lede">New places. Shared discoveries. A different view of the world.</p><p>Explore Europe with SBU through its cities, its everyday life, and the people you travel with.</p><div className="button-row"><Link className="button" to="/2027">Discover the 2027 trip <span aria-hidden="true">↗</span></Link><Link className="text-link" to="/2025">Look back at 2025 →</Link></div></div>
+        <div className="home-hero-photo"><PhotoFigure photo={photoById['olivia-V04']} priority /><span className="photo-index" aria-hidden="true">VIENNA / 2025</span></div>
+      </section>
+      <section className="program-strip"><div className="shell program-strip-inner"><p>A faculty-led student experience</p><span>City walks & cultural visits</span><span>Learning beyond the classroom</span><span>Time to explore together</span></div></section>
+      <section className="shell section intro-section"><p className="eyebrow">The experience</p><div><h2>There is more to a place<br />than its landmarks.</h2><p className="large-copy">A museum visit, a conversation over lunch, the view from a train, a turn down an unfamiliar street. The trip is made of all of these moments.</p><p>Our Europe program brings students and faculty together every other year. The 2025 photographs offer a close look at that experience; the next journey is taking shape for 2027.</p></div></section>
+      <section className="section section-tinted" id="cities"><div className="shell"><div className="section-heading"><div><p className="eyebrow">The 2025 trip</p><h2>Four cities.<br />Countless moments.</h2></div><div><p>Vienna, Munich, Cologne, and Amsterdam—with excursions and discoveries along the way.</p><Link className="text-link" to="/2025">See the 2025 story →</Link></div></div><div className="city-grid">{cities.map((city) => <CityCard key={city.slug} city={city} />)}</div></div></section>
+      <section className="section next-trip"><div className="shell"><div className="section-heading"><div><p className="eyebrow">The next chapter</p><h2>Looking to 2027.</h2></div><div><p>Five cities are in the current plan. The journey starts in Vienna; the order of the final two stops is still being worked out.</p><Link className="text-link" to="/2027">Explore the working route →</Link></div></div><TripRoute compact /></div></section>
+    </main>
   )
 }

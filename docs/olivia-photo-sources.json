@@ -1,0 +1,132 @@
+{
+  "reviewDate": "2026-09-16",
+  "approval": "User approved all 21 review selections for addition to the site.",
+  "photographs": [
+    {
+      "reviewId": "V04",
+      "destination": "assets/photos/vienna/olivia-2025-v04.webp",
+      "source": "Olivia/Vienna/incoming/20250524_025653000_iOS.webp",
+      "sha256": "2397665be4a941a886b1aa8352caeef8c6dcb1befa3a3174ef9e911093207ae5"
+    },
+    {
+      "reviewId": "V05",
+      "destination": "assets/photos/vienna/olivia-2025-v05.webp",
+      "source": "Olivia/Vienna/incoming/20250524_074700134_iOS.webp",
+      "sha256": "67cc35d3468be7630cf29b5427cd2ac710a0f52d3743442293ede026eb60334c"
+    },
+    {
+      "reviewId": "V07",
+      "destination": "assets/photos/vienna/olivia-2025-v07.webp",
+      "source": "Olivia/Vienna/incoming/20250524_082258855_iOS.webp",
+      "sha256": "22ff9403237a2697d39681c8dd4cac7bad09e94a9adf014cbe4ed7df0298517f"
+    },
+    {
+      "reviewId": "V13",
+      "destination": "assets/photos/vienna/olivia-2025-v13.webp",
+      "source": "Olivia/Vienna/incoming/20250524_153649153_iOS.webp",
+      "sha256": "35f9d78ef110b9fa6725cc5866c4244a563d3cf7ee2bd6ac000dbf47f437930e"
+    },
+    {
+      "reviewId": "V16",
+      "destination": "assets/photos/vienna/olivia-2025-v16.webp",
+      "source": "Olivia/Vienna/incoming/20250524_185911839_iOS.webp",
+      "sha256": "fa71b0d928f3bf54f01eff77602f01abcba33c7ea4a39019d141c49744e95ef3"
+    },
+    {
+      "reviewId": "M04",
+      "destination": "assets/photos/munich/olivia-2025-m04.webp",
+      "source": "Olivia/Munich/incoming/20250525_134704226_iOS.webp",
+      "sha256": "6be907c6308f466f20c166e642306f8a299cc0a9bbba7f619a27db5e4f522078"
+    },
+    {
+      "reviewId": "M09",
+      "destination": "assets/photos/munich/olivia-2025-m09.webp",
+      "source": "Olivia/Munich/incoming/20250525_140705033_iOS.webp",
+      "sha256": "3eb203965170b594661f9ba50e4e8c3f82bd275658e57c7c5e25f45822a8614d"
+    },
+    {
+      "reviewId": "M14",
+      "destination": "assets/photos/munich/olivia-2025-m14.webp",
+      "source": "Olivia/Munich/incoming/20250526_110744905_iOS.webp",
+      "sha256": "338b8b9334db429c81bf495c24696d15c9787aef4d239f8f7b76dbd175656380"
+    },
+    {
+      "reviewId": "M17",
+      "destination": "assets/photos/munich/olivia-2025-m17.webp",
+      "source": "Olivia/Munich/incoming/20250526_151634390_iOS.webp",
+      "sha256": "6dd34970cfd580519ba6f9641661a1275a2c589f7a7208ede841585f96ce953f"
+    },
+    {
+      "reviewId": "M24",
+      "destination": "assets/photos/munich/olivia-2025-m24.webp",
+      "source": "Olivia/Munich/incoming/20250527_081705928_iOS.webp",
+      "sha256": "d2187d9b0402f90820797b391e9a0c2e7536f983fdfd151e90531c055b851c78"
+    },
+    {
+      "reviewId": "M27",
+      "destination": "assets/photos/munich/olivia-2025-m27.webp",
+      "source": "Olivia/Munich/incoming/20250527_105900000_iOS.webp",
+      "sha256": "5d9129a22177d8c5b257247c2561c83ebb3b36a5f3650e841bb66b625a1f17e5"
+    },
+    {
+      "reviewId": "M33",
+      "destination": "assets/photos/munich/olivia-2025-m33.webp",
+      "source": "Olivia/Munich/incoming/20250527_133402370_iOS.webp",
+      "sha256": "9949e513119cd35b7fef58ad08c707b12714ef932b8db0a0dc3b78aa8f9498b5"
+    },
+    {
+      "reviewId": "C03",
+      "destination": "assets/photos/cologne/olivia-2025-c03.webp",
+      "source": "Olivia/Cologne/incoming/20250528_133114236_iOS.webp",
+      "sha256": "581ada45a2d0e0c1adc9c9307f7d26f313473b984f4bef0afbe81cef32655af8"
+    },
+    {
+      "reviewId": "C05",
+      "destination": "assets/photos/cologne/olivia-2025-c05.webp",
+      "source": "Olivia/Cologne/incoming/20250528_134423442_iOS.webp",
+      "sha256": "f14688eed43bc308fc776a9e6dfc1e937919b7e194669f35ce2892fd19f82f46"
+    },
+    {
+      "reviewId": "C06",
+      "destination": "assets/photos/cologne/olivia-2025-c06.webp",
+      "source": "Olivia/Cologne/incoming/20250528_134753955_iOS.webp",
+      "sha256": "f23eb2deabef646bc0a60ef15fcf6171d09c0474b94d259f43da376ab4f49858"
+    },
+    {
+      "reviewId": "C09",
+      "destination": "assets/photos/cologne/olivia-2025-c09.webp",
+      "source": "Olivia/Cologne/incoming/20250529_123935453_iOS.webp",
+      "sha256": "f57e4b9bdea473e98eb05c4ec73a6128c4ec4988d0fa5fc90833ce528793863a"
+    },
+    {
+      "reviewId": "C11",
+      "destination": "assets/photos/cologne/olivia-2025-c11.webp",
+      "source": "Olivia/Cologne/incoming/20250530_094553830_iOS.webp",
+      "sha256": "40f61478479974985b02ad12cda76070aa725b210e67ab0f9d00917af909572d"
+    },
+    {
+      "reviewId": "A02",
+      "destination": "assets/photos/amsterdam/olivia-2025-a02.webp",
+      "source": "Olivia/Amsterdam/incoming/20250531_145626790_iOS.webp",
+      "sha256": "2a3383243250c5253c57f410e3e02b797b76c0b7fea4013d6d3a9b8b1d01c101"
+    },
+    {
+      "reviewId": "A06",
+      "destination": "assets/photos/amsterdam/olivia-2025-a06.webp",
+      "source": "Olivia/Amsterdam/incoming/20250531_155126967_iOS.webp",
+      "sha256": "cda6ee9d941f0ae3f67e3eba55412fd97e4e6c560f6f72ba93e42129b98d4615"
+    },
+    {
+      "reviewId": "A09",
+      "destination": "assets/photos/amsterdam/olivia-2025-a09.webp",
+      "source": "Olivia/Amsterdam/incoming/20250601_114314125_iOS.webp",
+      "sha256": "d569fe992df3284c0a2de647f2f0eff9f37b1a777aee1bb44e8c68b77a8ddc53"
+    },
+    {
+      "reviewId": "A12",
+      "destination": "assets/photos/amsterdam/olivia-2025-a12.webp",
+      "source": "Olivia/Amsterdam/incoming/20250601_132337060_iOS.webp",
+      "sha256": "b9ccd1c05c88e2d694d482444e06e604e5b35ec84a6eb5d3409f853f4a8db76c"
+    }
+  ]
+}

@@ -10,8 +10,8 @@ const destinationPhotos = Object.fromEntries(photoSources.map((photo) => {
 }))
 const viennaPhoto = photoById['olivia-V13']
 
-// This is a display assumption, not a finalized itinerary or timetable.
-export const routeAssumption = 'Planning assumption: Berlin before Hamburg; Hamburg is the final stop.'
+// The EEE information-session slides distinguish overnight stays from day trips.
+export const routeAssumption = 'Proposed route from the EEE information-session slides. City stays, day trips, dates, and rail arrangements remain subject to confirmation.'
 export const destinations2027 = [
   {
     slug: 'vienna', name: 'Vienna', country: 'Austria', coordinates: [16.3738, 48.2082],
@@ -30,16 +30,8 @@ export const destinations2027 = [
     photo: destinationPhotos.prague
   },
   {
-    slug: 'dresden', name: 'Dresden', country: 'Germany', coordinates: [13.7373, 51.0504],
-    subtitle: 'Art and architecture on the Elbe.',
-    description: 'The Frauenkirche, the Zwinger, and the Semperoper give Dresden a distinctive skyline and an extraordinary concentration of art and architecture. The rebuilt Frauenkirche also makes the city a place to consider destruction, reconstruction, and remembrance.',
-    landmarks: ['Frauenkirche', 'The Zwinger', 'Semperoper'],
-    guideUrl: 'https://www.visit-dresden-elbland.de/en/sights/', guideLabel: 'Dresden’s official visitor guide',
-    photo: destinationPhotos.dresden
-  },
-  {
     slug: 'berlin', name: 'Berlin', country: 'Germany', coordinates: [13.4050, 52.5200],
-    subtitle: 'A capital with history in its streets.',
+    subtitle: 'May 26–29 · A capital with history in its streets.',
     description: 'The Brandenburg Gate is a starting point for exploring Berlin’s history of division and reunification. Museums, memorials, and the neighborhoods around them offer different ways to understand Germany’s capital, past and present.',
     landmarks: ['Brandenburg Gate', 'Museums', 'History & remembrance'],
     guideUrl: 'https://www.visitberlin.de/en/brandenburg-gate', guideLabel: 'Berlin’s official visitor guide',
@@ -47,10 +39,16 @@ export const destinations2027 = [
   },
   {
     slug: 'hamburg', name: 'Hamburg', country: 'Germany', coordinates: [9.9937, 53.5511],
-    subtitle: 'A waterfront finish.',
+    subtitle: 'May 30–31 · A waterfront finish.',
     description: 'Hamburg turns the journey toward the water: the brick warehouses and canals of the Speicherstadt, the harbor around Landungsbrücken, and the Elbphilharmonie above the Elbe. It is the final stop in the route shown here.',
     landmarks: ['Speicherstadt', 'Elbphilharmonie', 'The harbor'],
     guideUrl: 'https://www.hamburg.com/visitors/sights/', guideLabel: 'Hamburg’s official visitor guide',
     photo: destinationPhotos.hamburg
   }
 ].map((city, index) => ({ ...city, stop: index + 1 }))
+
+export const dayTrips2027 = [
+  { slug: 'bratislava', name: 'Bratislava', country: 'Slovakia', from: 'Vienna', coordinates: [17.1077, 48.1486], description: 'A proposed day trip to Slovakia’s Danube-side capital.', photo: '/eee-2027/bratislava.webp' },
+  { slug: 'dresden', name: 'Dresden', country: 'Germany', from: 'Berlin', coordinates: [13.7373, 51.0504], description: 'A proposed day trip to Dresden’s restored historic center.', photo: '/eee-2027/dresden.webp' },
+  { slug: 'lubeck', name: 'Lübeck & Travemünde', country: 'Germany', from: 'Hamburg', coordinates: [10.6866, 53.8668], description: 'A proposed day trip from Hamburg toward the Baltic coast.', photo: '/eee-2027/baltic.webp' }
+]

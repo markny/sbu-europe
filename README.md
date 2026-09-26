@@ -25,7 +25,8 @@ Cloudflare Pages should build with `npm run build` and publish `dist`. `public/_
 - `/`: program overview, 2025 city chapters, and the next trip.
 - `/2025`: retrospective with links to Vienna, Munich, Cologne, and Amsterdam.
 - `/2025/:city`: city story, selected highlights, complete gallery, and photo viewer.
-- `/2027`: interactive rail-route map with city introductions, landmark photographs, and official visitor links. The map assumes Vienna → Prague → Dresden → Berlin → Hamburg, with Hamburg last for clarity; the final order is not confirmed.
+- `/2027`: European Economic Experience overview based on the 2027 information-session slides, including the interactive map, four proposed city stays, three proposed day trips, planning details, and the original PowerPoint download.
+- `/2027/presentation`: a keyboard-accessible, clickable web adaptation of the slides. Use section buttons or previous/next controls; deep links use slide IDs such as `#explore`.
 - Existing city links such as `/vienna` and `/looking-ahead` redirect to their corresponding new pages.
 
 ## Editing photographs and captions
@@ -43,9 +44,9 @@ To add an image, place a WebP in the appropriate `assets/photos/<city>/` folder 
 - `src/pages/`: the program, retrospective, city, and next-trip pages.
 - `src/components/TripRoute.jsx`: the first three ordered stops and the final two unordered cities.
 - `src/components/RailRouteMap.jsx`: the interactive 2027 map and destination panels, with dedicated responsive styles.
-- `src/data/destinations2027.js`: the map's assumed destination order, city introductions, and official visitor links. See `docs/2027-route-map.md` for geography and photograph sources.
+- `src/data/destinations2027.js`: the map's proposed city stays, day trips, city introductions, and official visitor links. See `docs/2027-route-map.md` for geography and photograph sources.
 - `src/components/GalleryLightbox.jsx`: highlights/all controls and an accessible native-dialog viewer.
 - `src/components/Layout.jsx`: responsive navigation, page titles, and footer.
 - `src/styles.css`: shared typography, colors, layout, and responsive rules.
 
-Dates, cost, eligibility, academic information, and the contact destination for 2027 still need confirmed details. Do not invent these or imply bookings are final. See `docs/2026-09-16-site-refresh.md` for the selection record and validation.
+The 2027 dates, course number and credits, and estimated cost come from `EEE Info Session Slides.pptx` supplied on September 26, 2026. They are presented as planning information rather than confirmed bookings or a final price. The AI cover illustration was extracted from the deck. Other web-page images in `public/eee-2027` are Olivia's 2025 photo or separately licensed Wikimedia Commons photographs, with visible credits and license links. `public/downloads/european-economic-experience-2027.pptx` is an unchanged copy of the original deck. Application and payment details still need confirmation. See `docs/2026-09-16-site-refresh.md` for the earlier selection record and validation.

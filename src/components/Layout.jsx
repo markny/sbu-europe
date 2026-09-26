@@ -9,10 +9,10 @@ export default function Layout({ children }) {
   useEffect(() => {
     setMenuOpen(false)
     const city = cityMap[pathname.split('/').pop()]
-    const title = city ? `${city.displayName} · 2025 trip` : pathname === '/2025' ? 'The 2025 trip' : pathname === '/2027' ? 'The 2027 trip' : 'Europe with SBU'
+    const title = city ? `${city.displayName} · 2025 trip` : pathname === '/2025' ? 'The 2025 trip' : pathname === '/2027' ? 'The European Economic Experience · 2027' : pathname === '/2027/presentation' ? '2027 web presentation' : 'Europe with SBU'
     document.title = title === 'Europe with SBU' ? title : `${title} · Europe with SBU`
-    const description = city?.teaser || (pathname === '/2027'
-      ? 'Explore the proposed SBU Europe 2027 rail journey: Vienna, Prague, Dresden, Berlin, and Hamburg. This interactive map assumes Hamburg is the final stop.'
+    const description = city?.teaser || (pathname.startsWith('/2027')
+      ? 'Explore the proposed 2027 European Economic Experience: four city stays, three day trips, an interactive map, and a downloadable information-session presentation.'
       : 'A faculty-led Europe experience with SBU. Explore photographs from the 2025 trip and learn about the route taking shape for 2027.')
     document.querySelector('meta[name="description"]')?.setAttribute('content', description)
     const frame = requestAnimationFrame(() => {
@@ -32,7 +32,7 @@ export default function Layout({ children }) {
           <button ref={menuButton} className="menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="site-navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? 'Close menu' : 'Menu'} <span aria-hidden="true">{menuOpen ? '−' : '+'}</span></button>
           <nav id="site-navigation" className={`site-nav ${menuOpen ? 'is-open' : ''}`} aria-label="Main navigation" onClick={() => setMenuOpen(false)}>
             <NavLink to="/" end>The program</NavLink><NavLink to="/2025">The 2025 trip</NavLink>
-            <NavLink className={({ isActive }) => `nav-next${isActive ? ' active' : ''}`} to="/2027">Looking to 2027 <span aria-hidden="true">↗</span></NavLink>
+            <NavLink className={({ isActive }) => `nav-next${isActive || pathname.startsWith('/2027/') ? ' active' : ''}`} to="/2027">Looking to 2027 <span aria-hidden="true">↗</span></NavLink>
           </nav>
         </div>
       </header>
